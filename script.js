@@ -12,6 +12,6 @@ var main = function (input) {
     counter += 1;
     myOutputValue += '<br>';
   }
-
+  // returning output
   return myOutputValue;
 };
