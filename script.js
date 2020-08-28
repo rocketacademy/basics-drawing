@@ -4,14 +4,13 @@ var main = function (input) {
   var myOutputValue = '';
   var counter = 0;
   while (counter < input) {
-    // var innerCounter = 0;
-    // while (innerCounter < input) {
-    //   myOutputValue += '😀';
-    //   innerCounter += 1;
-
+    var innerCounter = 0;
+    while (innerCounter < input) {
+      myOutputValue += '😀';
+      innerCounter += 1;
+    }
     counter += 1;
-    myOutputValue += '😀';
-    // myOutputValue += '<br>';
+    myOutputValue += '<br>';
   }
 
   return myOutputValue;
