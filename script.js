@@ -1,11 +1,17 @@
 // Please declare functions and variables above where they are used.
 
 var main = function (input) {
-  var counter = 0;
+  var rowCounter = 0;
+  var columnCounter;
   var myOutputValue = '';
-  while (counter < input) {
-    myOutputValue += '😊';
-    counter += 1;
+  while (rowCounter < input) {
+    columnCounter = 0;
+    while (columnCounter < input) {
+      myOutputValue += '😀';
+      columnCounter += 1;
+    }
+    myOutputValue += '<br>';
+    rowCounter += 1;
   }
   return myOutputValue;
 };
