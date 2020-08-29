@@ -1,19 +1,29 @@
 var main = function (input) {
   var rowCounter = 0;
-  var columnCounter = input;
-  var numOfColumns;
+  var columnCounter;
   var myOutputValue = '';
 
-  // game logic for upside down triangle
+  // game logic for outline square
   while (rowCounter < input) {
-    numOfColumns = columnCounter;
-    while (numOfColumns > 0) {
-      myOutputValue += '😀';
-      numOfColumns -= 1;
+    columnCounter = 0;
+    if (rowCounter == 0 || rowCounter == (input - 1)) {
+      while (columnCounter < input) {
+        myOutputValue += '😀';
+        columnCounter += 1;
+      }
+    } else {
+      while (columnCounter < input) {
+        if (columnCounter == 0 || columnCounter == (input - 1)) {
+          myOutputValue += '😀';
+          columnCounter += 1;
+        } else {
+          myOutputValue += '👻';
+          columnCounter += 1;
+        }
+      }
     }
     myOutputValue += '<br>';
     rowCounter += 1;
-    columnCounter -= 1;
   }
   return myOutputValue;
 };
