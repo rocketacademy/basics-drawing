@@ -206,7 +206,7 @@ var centerSquare = function (input) {
  * Solution for Rings (this was hard!)
  */
 // eslint-disable-next-line no-unused-vars
-var rings = function (input) {
+var main = function (input) {
   var myOutputValue = '';
   // sideLength represents the length of each side of the square
   var sideLength = Number(input);
@@ -242,17 +242,14 @@ var rings = function (input) {
     }
   }
 
-  var outerCounter = 0;
-  while (outerCounter < sideLength) {
-    var innerCounter = 0;
-    while (innerCounter < sideLength) {
-      // Print the value in the relevant position in the array
-      myOutputValue += grid[outerCounter][innerCounter];
-      innerCounter += 1;
+  // Translate what's in the grid to myOutputValue
+  for (let i = 0; i < sideLength; i += 1) {
+    for (let j = 0; j < sideLength; j += 1) {
+      myOutputValue += grid[i][j];
     }
     // Insert a line break to start a new row
     myOutputValue += '<br>';
-    outerCounter += 1;
   }
+
   return myOutputValue;
 };
