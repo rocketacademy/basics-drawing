@@ -6,7 +6,7 @@ var shapeCreated = "";
 
 var main = function (input) {
   if (gameStage=="first"){
-    if (input =="square" || input == "triangle" || input == "upside down triangle" || input == "outline square" || input == "centre square"){
+    if (input =="square" || input == "triangle" || input == "upside down triangle" || input == "outline square" || input == "centre square" || input == "ring"){
       shapeCreated = input;
       myOutputValue = "Hello! You have requested to create " + shapeCreated + " shape! Please enter the dimension now! " + "<br>";
       gameStage = "second";
@@ -126,6 +126,89 @@ var main = function (input) {
           myOutputValue = myOutputValue + "<br>";
         }
       }
+    }
+    else if (shapeCreated == "ring"){
+      while (counter < input){
+        if (counter <= input/2-0.5){
+          if (counter%2 == 0){
+            var innerCounter = 0;
+            while (innerCounter < input){
+              if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                if (innerCounter%2 == 0){
+                  myOutputValue = myOutputValue + " B ";
+                }
+                else if (innerCounter%2 == 1){
+                  myOutputValue = myOutputValue + " A ";
+                }
+              innerCounter = innerCounter + 1;
+              }
+              else if (innerCounter >= counter && innerCounter < (input-counter)) {
+                myOutputValue = myOutputValue + " B ";
+                innerCounter = innerCounter + 1;
+              }
+            }
+          }
+          else {
+            var innerCounter = 0;
+            while (innerCounter < input){
+              if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                if (innerCounter%2 == 0){
+                  myOutputValue = myOutputValue + " B ";
+                }
+                else if (innerCounter%2 == 1){
+                  myOutputValue = myOutputValue + " A ";
+                }
+              innerCounter = innerCounter + 1;
+              }
+              else if (innerCounter >= counter && innerCounter < (input-counter)) {
+                myOutputValue = myOutputValue + " A ";
+                innerCounter = innerCounter + 1;
+              }
+            }
+          }
+        }
+        else{
+          var equivalentCounter = input - counter - 1;
+          if (equivalentCounter%2 == 0){
+            var innerCounter = 0;
+            while (innerCounter < input){
+              if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                if (innerCounter%2 == 0){
+                  myOutputValue = myOutputValue + " B ";
+                }
+                else if (innerCounter%2 == 1){
+                  myOutputValue = myOutputValue + " A ";
+                }
+              innerCounter = innerCounter + 1;
+              }
+              else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
+                myOutputValue = myOutputValue + " B ";
+                innerCounter = innerCounter + 1;
+              }
+            }
+          }
+          else {
+            var innerCounter = 0;
+            while (innerCounter < input){
+              if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                if (innerCounter%2 == 0){
+                  myOutputValue = myOutputValue + " B ";
+                }
+                else if (innerCounter%2 == 1){
+                  myOutputValue = myOutputValue + " A ";
+                }
+              innerCounter = innerCounter + 1;
+              }
+              else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
+                myOutputValue = myOutputValue + " A ";
+                innerCounter = innerCounter + 1;
+              }
+            }
+          }
+        }
+        counter = counter + 1;
+        myOutputValue = myOutputValue + "<br>";
+        }
     }
   }    
   return myOutputValue;
