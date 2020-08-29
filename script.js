@@ -12,7 +12,7 @@ var main = function (input) {
       gameStage = "second";
     }  
     else {
-      myOutputValue = 'Please enter either "square" or "triangle" or "upside down triangle" or "outline square" or "centre square"';
+      myOutputValue = 'Please enter either "square" or "triangle" or "upside down triangle" or "outline square" or "centre square" or "ring"';
     }
    console.log("Shape: "+ shapeCreated) ;
   }  
