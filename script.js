@@ -11,6 +11,8 @@ var main = function (input) {
     myOutputValue = triangleMode(input);
   } else if (mode == "square") {
     myOutputValue = squareMode(input);
+  } else if (mode == "inverted") {
+    myOutputValue = invertedMode(input);
   }
   return myOutputValue;
 };
@@ -22,6 +24,24 @@ var triangleMode = function (input) {
   while (lineCounter < input) {
     var columnCounter = 0;
     while (columnCounter < (lineCounter + 1)) {
+      myOutputValue = myOutputValue + "😀"
+      console.log("2" + myOutputValue);
+      columnCounter = columnCounter + 1;
+    }
+    myOutputValue = myOutputValue + '<br>'
+    console.log("3" + myOutputValue);
+    lineCounter = lineCounter + 1;
+  }
+  return myOutputValue;
+}
+
+//inverted mode based on dimension input
+var invertedMode = function (input) {
+  var myOutputValue = "";
+  var lineCounter = 0
+  while (lineCounter < input) {
+    var columnCounter = 0;
+    while (columnCounter < (input - lineCounter)) {
       myOutputValue = myOutputValue + "😀"
       console.log("2" + myOutputValue);
       columnCounter = columnCounter + 1;
