@@ -206,7 +206,7 @@ var centerSquare = function (input) {
  * Solution for Rings (this was hard!)
  */
 // eslint-disable-next-line no-unused-vars
-var main = function (input) {
+var rings = function (input) {
   var myOutputValue = '';
   // sideLength represents the length of each side of the square
   var sideLength = Number(input);
