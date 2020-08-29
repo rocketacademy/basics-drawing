@@ -16,7 +16,7 @@
       margin: 20px auto;
       padding: 20px;
       background-color: pink;
-      max-width: 300px;
+      max-width: 600px;
     }
 
     input {
@@ -32,14 +32,14 @@
     #output {
       margin: 20px auto;
       padding: 20px;
-      background-color: grey;
+      background-color:rgb(218, 212, 212);
       width: 100%;
     }
   </style>
 </head>
 
 <body>
-  <h1 id="header">SWE101! 🚀</h1>
+  <h1 id="header">Drawing Game!! 🚀</h1>
   <div id="container">
     <input id="my-input" />
     <button id="my-button">Submit</button>
@@ -49,8 +49,24 @@
   </div>
   <!-- Import program logic -->
   <script src="script.js"></script>
+  <!--function to display the message to user-->
+  <script language = 'javascript'>
+    function printShapeInputMessage()
+    {
+      var varMessage = "Please input one of the following values to select a shape to draw: <br/>";
+      varMessage += "Enter 1 to display the number of characters <br/>";
+      varMessage += "Enter 2 to draw Square <br/>";
+      varMessage += "Enter 3 to draw Triangle <br/>";
+      varMessage += "Enter 4 to draw Upside down Triangle <br/>";
+      varMessage += "Enter 5 to draw Outline Square <br/>";
+      varMessage += "Enter 6 to draw Center Square <br/>";
+      varMessage += "Enter 7 to draw Rings <br/>";
+      return varMessage;
+    }
+  </script>
   <!-- Define button click functionality -->
   <script>
+    document.getElementById("output").innerHTML = printShapeInputMessage();
     var button = document.querySelector('#my-button');
     button.addEventListener('click', function () {
       // Set result to input value
