@@ -128,88 +128,198 @@ var main = function (input) {
       }
     }
     else if (shapeCreated == "ring"){
-      while (counter < input){
-        if (counter <= input/2-0.5){
-          if (counter%2 == 0){
-            var innerCounter = 0;
-            while (innerCounter < input){
-              if (innerCounter < counter || innerCounter > (input - counter - 1)){
-                if (innerCounter%2 == 0){
-                  myOutputValue = myOutputValue + " 😆 ";
-                }
-                else if (innerCounter%2 == 1){
-                  myOutputValue = myOutputValue + " 😈 ";
-                }
-              innerCounter = innerCounter + 1;
-              }
-              else if (innerCounter >= counter && innerCounter < (input-counter)) {
-                myOutputValue = myOutputValue + " 😆 ";
+      if (input%2==1){
+        while (counter < input){
+          if (counter <= input/2-0.5){
+            if (counter%2 == 0){
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                  if (innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
                 innerCounter = innerCounter + 1;
+                }
+                else if (innerCounter >= counter && innerCounter < (input-counter)) {
+                  myOutputValue = myOutputValue + " 😆 ";
+                  innerCounter = innerCounter + 1;
+                }
+              }
+            }
+            else {
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                  if (innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                innerCounter = innerCounter + 1;
+                }
+                else if (innerCounter >= counter && innerCounter < (input-counter)) {
+                  myOutputValue = myOutputValue + " 😈 ";
+                  innerCounter = innerCounter + 1;
+                }
               }
             }
           }
-          else {
-            var innerCounter = 0;
-            while (innerCounter < input){
-              if (innerCounter < counter || innerCounter > (input - counter - 1)){
-                if (innerCounter%2 == 0){
-                  myOutputValue = myOutputValue + " 😆 ";
-                }
-                else if (innerCounter%2 == 1){
-                  myOutputValue = myOutputValue + " 😈 ";
-                }
-              innerCounter = innerCounter + 1;
-              }
-              else if (innerCounter >= counter && innerCounter < (input-counter)) {
-                myOutputValue = myOutputValue + " 😈 ";
+          else{
+            var equivalentCounter = input - counter - 1;
+            if (equivalentCounter%2 == 0){
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                  if (innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
                 innerCounter = innerCounter + 1;
+                }
+                else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
+                  myOutputValue = myOutputValue + " 😆 ";
+                  innerCounter = innerCounter + 1;
+                }
+              }
+            }
+            else {
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                  if (innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                innerCounter = innerCounter + 1;
+                }
+                else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
+                  myOutputValue = myOutputValue + " 😈 ";
+                  innerCounter = innerCounter + 1;
+                }
               }
             }
           }
+          counter = counter + 1;
+          myOutputValue = myOutputValue + "<br>";
         }
-        else{
-          var equivalentCounter = input - counter - 1;
-          if (equivalentCounter%2 == 0){
-            var innerCounter = 0;
-            while (innerCounter < input){
-              if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
-                if (innerCounter%2 == 0){
-                  myOutputValue = myOutputValue + " 😆 ";
-                }
-                else if (innerCounter%2 == 1){
-                  myOutputValue = myOutputValue + " 😈 ";
-                }
-              innerCounter = innerCounter + 1;
-              }
-              else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
-                myOutputValue = myOutputValue + " 😆 ";
+       }
+      else{
+        while (counter < input){
+          if (counter < input/2){
+            if (counter%2 == 0){
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                  if ( innerCounter < input/2 && innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter < input/2 && innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                  else if (innerCounter > input/2 && innerCounter%2==0){
+                    myOutputValue = myOutputValue + " 😈 "
+                  }
+                  else{
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
                 innerCounter = innerCounter + 1;
+                }
+                else {
+                  myOutputValue = myOutputValue + " 😆 ";
+                  innerCounter = innerCounter + 1;
+                }
+              }
+            }  
+            else {
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < counter || innerCounter > (input - counter - 1)){
+                  if ( innerCounter < input/2 && innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter < input/2 && innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                  else if (innerCounter > input/2 && innerCounter%2==0){
+                    myOutputValue = myOutputValue + " 😈 "
+                  }
+                  else{
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                innerCounter = innerCounter + 1;
+                }
+                else {
+                  myOutputValue = myOutputValue + " 😈 ";
+                  innerCounter = innerCounter + 1;
+                }
               }
             }
           }
-          else {
-            var innerCounter = 0;
-            while (innerCounter < input){
-              if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
-                if (innerCounter%2 == 0){
-                  myOutputValue = myOutputValue + " 😆 ";
-                }
-                else if (innerCounter%2 == 1){
-                  myOutputValue = myOutputValue + " 😈 ";
-                }
-              innerCounter = innerCounter + 1;
-              }
-              else if (innerCounter >= equivalentCounter && innerCounter < (input-equivalentCounter)) {
-                myOutputValue = myOutputValue + " 😈 ";
+          else{
+            var equivalentCounter = input - counter - 1;
+            if (equivalentCounter%2 == 0){
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                  if ( innerCounter < input/2 && innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter < input/2 && innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                  else if (innerCounter > input/2 && innerCounter%2==0){
+                    myOutputValue = myOutputValue + " 😈 "
+                  }
+                  else{
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
                 innerCounter = innerCounter + 1;
+                }
+                else {
+                  myOutputValue = myOutputValue + " 😆 ";
+                  innerCounter = innerCounter + 1;
+                }
+              }
+            }  
+            else {
+              var innerCounter = 0;
+              while (innerCounter < input){
+                if (innerCounter < equivalentCounter || innerCounter > (input - equivalentCounter - 1)){
+                  if ( innerCounter < input/2 && innerCounter%2 == 0){
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                  else if (innerCounter < input/2 && innerCounter%2 == 1){
+                    myOutputValue = myOutputValue + " 😈 ";
+                  }
+                  else if (innerCounter > input/2 && innerCounter%2==0){
+                    myOutputValue = myOutputValue + " 😈 "
+                  }
+                  else{
+                    myOutputValue = myOutputValue + " 😆 ";
+                  }
+                innerCounter = innerCounter + 1;
+                }
+                else {
+                  myOutputValue = myOutputValue + " 😈 ";
+                  innerCounter = innerCounter + 1;
+                }
               }
             }
           }
+          counter = counter + 1;
+          myOutputValue = myOutputValue + "<br>";
         }
-        counter = counter + 1;
-        myOutputValue = myOutputValue + "<br>";
-        }
+      }
     }
-  }    
-  return myOutputValue;
-}
+  }
+  return myOutputValue;  
+}    
+
