@@ -15,28 +15,20 @@ var main = function (input) {
   // otherwise, alternate beggining with the 1st char at the left edge
 
   // right
-  // top
   // aaaaaaa 
-  // abbbbbA col == size - row -- 6 == 7 - 1 // switch back to 1st char
+  // abbbbbA col == size - row -- 6 == 7 - 1 // top: switch back to 1st char
   // abaaaBa col == size - row -- 5 == 7 - 2
-
   // abababa
-
-  // bottom
   // abaaaba
-  // abbbbBa col == row // switch back to 1st char
+  // abbbbBa col == row // bottom: switch back to 1st char
   // aaaaaaa
 
   // left
-  // top
   // aaaaaaa
-  // aBbbbba col == row // switch to 2nd char
+  // aBbbbba col == row // top: switch to 2nd char
   // abaaaba
-
   // abababa
-
-  // bottom
-  // aBaaaba col + 1 == size - row -- 2 == 7 - 4 // switch to 2nd char
+  // aBaaaba col + 1 == size - row -- 2 == 7 - 4 // bottom: switch to 2nd char
   // aBbbbba col + 1 == size - row -- 1 == 7 - 5
   // aaaaaaa
 
@@ -50,16 +42,20 @@ var main = function (input) {
   var rowCounter = 0;
 
   while (rowCounter < size) {
+
     var row = rowCounter;
 
     alternate = true;
 
+    // only flip this once when we've gone past the center row
     if (row > Math.floor(size / 2)) {
       rowPosition = 'bottom'
     }
 
     var columnCounter = 0;
+
     while (columnCounter < size) {
+
       var col = columnCounter;
 
       // top and bottom
@@ -67,7 +63,7 @@ var main = function (input) {
         alternate = false;
         printSmiley = true;
 
-        // center
+      // center
       } else if (row == (Math.floor(size / 2))) {
 
         // center if even
@@ -75,19 +71,20 @@ var main = function (input) {
           alternate = true;
           printSmiley = !printSmiley;
         }
-        // upper left
+
+      // upper left
       } else if (rowPosition == 'top' && col == row) {
         alternate = false;
 
-        // lower right
+      // lower right
       } else if (rowPosition == 'bottom' && col == row) {
         alternate = true;
 
-        // lower left
+      // lower left
       } else if (rowPosition == 'bottom' && col + 1 == size - row) {
         alternate = false;
 
-        // upper right
+      // upper right
       } else if (rowPosition == 'top' && col == (size - row) && alternate == false) {
         alternate = true;
         // flip it back, bc we are back to alternating. but alternate wont happen until later
