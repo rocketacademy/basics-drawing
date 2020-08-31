@@ -92,9 +92,9 @@ var main = function (input) {
       }
 
       if (printSmiley) {
-        out += '😁';
+        out = out + '😁';
       } else {
-        out += '♥️';
+        out = out + '♥️';
       }
 
       // alternate by switching character
@@ -105,9 +105,9 @@ var main = function (input) {
     }
 
     // end of line
-    out += '<br>';
+    out = out + '<br>';
 
-    // reset character to edge
+    // reset character to left edge
     printSmiley = true;
     rowCounter = rowCounter + 1;
   }
