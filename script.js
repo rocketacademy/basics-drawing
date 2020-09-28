@@ -26,11 +26,13 @@ var main = function (input) {
     rowCounter = rowCounter + 1;
   }
 
-  // draw last row (looped with input)
-  var lastRowLength = 0;
-  while (lastRowLength < input) {
-    myOutputValue = myOutputValue + '😀';
-    lastRowLength = lastRowLength + 1;
+  // draw last row (looped with input) if input is at least 2
+  if (input > 1) {
+    var lastRowLength = 0;
+    while (lastRowLength < input) {
+      myOutputValue = myOutputValue + '😀';
+      lastRowLength = lastRowLength + 1;
+    }
   }
   return myOutputValue;
 };
