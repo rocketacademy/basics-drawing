@@ -8,8 +8,8 @@ var main = function (input) {
   while (counter < input) {
     console.log('start inner counter');
     var innerCounter = 0;
-    while (innerCounter < input) {
-      myOutputValue = myOutputValue + '(Y)';
+    while (innerCounter < counter + 1) {
+      myOutputValue = myOutputValue + 'Y';
       innerCounter = innerCounter + 1;
     }
     myOutputValue = myOutputValue + '<br>'
