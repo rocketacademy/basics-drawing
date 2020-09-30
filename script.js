@@ -1,9 +1,22 @@
-var main = function (input) {
-  var myOutputValue = '';
-  var counter = 0;
-  while (counter < input) {
+var myOutputValue = '';
+
+var lineCounter = 0;
+
+while (lineCounter < input) {
+  var columnCounter = 0;
+
+  while (columnCounter < input) {
     myOutputValue = myOutputValue + '👍';
-    counter = counter + 1;
+
+    columnCounter = columnCounter + 1;
   }
-  return myOutputValue;
+
+  // start a new line
+  myOutputValue = myOutputValue + '<br>';
+
+  lineCounter = lineCounter + 1;
+}
+
+return myOutputValue;
 };
+
