@@ -4,7 +4,7 @@ var main = function (input) {
   var counter  = 0;
   while (counter < input) {
     var innerCounter = 0;
-    while (innerCounter < input){
+    while (innerCounter <= counter){
       myOutputValue = myOutputValue + '💩';
       innerCounter = innerCounter + 1;
     }
