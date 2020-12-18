@@ -1,29 +1,30 @@
 // ----------------------------------------
-// Let's Draw V2 (Square)
+// Let's Draw V3 (Triangle)
 // ----------------------------------------
 
 var main = function (input) {
   var myOutputValue = "Let's draw: <br>";
-  // Initialise main counter
+  // Initialise main counter to 0
   var counter = 0;
 
-  // Keep running this loop as long as the counter is less than then number input
+  // Run this outer loop as long as counter is less than the user input
   while (counter < input) {
-    // Initialise counter for the inner loop, within while loop
+    // Initialise an inner counter for the inner while loop
+    // This is initialised to 0 every time we come out of the inner loop
     var innerCounter = 0;
 
-    // Keep running this inner loop as long as it also less than than number input
-    while (innerCounter < input) {
-      // While in this loop, keep adding 👍 input - 1 number of times
+    // As long as counter for inner loop is less than main counter, add 👍 to myOutputValue
+    // For the first run, it will immediately jump to lines 24 & 25
+    while (innerCounter < counter) {
       myOutputValue += '👍';
-      // We update this innerCounter by adding 1 so we do not get stuck in an infinite loop
-      // this will help the innerCounter to be greater than the input at some point
-      // breaking us out of the current immediate while loop
+      // Add 1 to inner counter to exit this inner loop and move back to the main loop
       innerCounter += 1;
     }
-    // Once broken out of the inner while loop, add a break to go to the next line
+
+    // This is part of the outer while loop & adds a <br> everytime we exit the inner loop
     myOutputValue += '<br>';
-    // Likewise, this counter is updated to break out of the main loop
+    // Add 1 to main counter to get closer to user input each time & fulfil the condition
+    // so as to close the outer while loop
     counter += 1;
   }
 
