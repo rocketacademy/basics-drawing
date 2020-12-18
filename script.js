@@ -1,32 +1,28 @@
 // ----------------------------------------
-// Let's Draw V3 (Triangle)
+// Let's Draw V4 (Outline Square)
 // ----------------------------------------
 
 var main = function (input) {
-  var myOutputValue = "Let's draw: <br>";
-  // Initialise main counter to 0
+  var myOutputValue = "Let's draw: <br><br>";
   var counter = 0;
 
-  // Run this outer loop as long as counter is less than the user input
+  // As long as counter is less than input, run this loop
   while (counter < input) {
-    // Initialise an inner counter for the inner while loop
-    // This is initialised to 0 every time we come out of the inner loop
     var innerCounter = 0;
-
-    // As long as counter for inner loop is less than main counter, add 👍 to myOutputValue
-    // For the first run, it will immediately jump to lines 24 & 25
-    while (innerCounter < counter) {
-      myOutputValue += '👍';
-      // Add 1 to inner counter to exit this inner loop and move back to the main loop
+    // As long as inner counter is less than input, run this loop
+    while (innerCounter < input) {
+      /* We get the middle of the square by the following:
+       ( 1st column ||  The middle of top row (excl. 1st & last) || Last column || The middle of bottom row (excl .1st & last) */
+      if (innerCounter == 0 || counter == 0 || innerCounter == input - 1 || counter == input - 1) {
+        myOutputValue += '✊';
+      } else {
+        myOutputValue += '👍';
+      }
+      // Update inner counter to exit inner loop to add <br> to go to next line of drawing
       innerCounter += 1;
     }
-
-    // This is part of the outer while loop & adds a <br> everytime we exit the inner loop
     myOutputValue += '<br>';
-    // Add 1 to main counter to get closer to user input each time & fulfil the condition
-    // so as to close the outer while loop
     counter += 1;
   }
-
   return myOutputValue;
 };
